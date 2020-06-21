@@ -2,9 +2,9 @@
   margin-bottom: 0!important;
 }
 body {
-  background: #000428;  /* fallback for old browsers */
-  background: -webkit-linear-gradient(to right, #004e92, #000428);  
-  background: linear-gradient(to right, #004e92, #000428); 
+  background: white;  /* fallback for old browsers */
+  /* background: -webkit-linear-gradient(to right, #004e92, #000428);   */
+  /* background: linear-gradient(to right, #004e92, #000428);  */
   margin: 0;
   padding: 0;
   font-family: sans-serif;
@@ -17,6 +17,7 @@ header {
 }
 .contenido-principal {
   background-color: white;
+  box-shadow: 0px 0px 15px -3px rgba(0, 0, 0, .5);
   padding: 30px;
   border-radius: 20px;
 }
@@ -32,21 +33,21 @@ header {
 }
 h1 {
   font-family: 'Raleway', sans-serif;
-  font-weight: 100;
-  color: white;
+  font-weight: bold;
+  color: rgb(0, 0, 0);
   text-align: center;
-  font-size: 4.8rem!important;
+  font-size: 3.rem!important;
 }
 h2 {
   font-family: 'Raleway', sans-serif;
   font-weight: 100;
-  color:#004e92;
+  color:#080623;
   margin-bottom:30px;
-  font-size:3rem!important;
+  font-size:1.5rem!important;
   text-align: center;
 }
 .campo {
-  margin-bottom: 2rem;
+  margin-bottom: 1rem;
 }
 .error {
   text-align: center;
