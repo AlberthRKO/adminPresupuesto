@@ -2,8 +2,12 @@ import React,{useState} from 'react';
 
 //reutilizanmos el error
 import Error from './Error'
+import shortid from 'shortid'
 
-const Formulario = () => {
+// Documentacion
+import PropTypes from 'prop-types'
+
+const Formulario = ({guardarGasto,guardarCrearGasto}) => {
     
     
     // creamos un state para capturar los datos del Formulario
@@ -23,13 +27,27 @@ const Formulario = () => {
         }
         guardarError(false)
 
+
+
         // Construir gasto
-        // un objeto para llenar
+        // un objeto para llenar lo obtenido de los campos y pasar al componente principal
+        const gasto = {
+            nombreg,
+            cantidadg,
+            id: shortid.generate()
+        }
+        // console.log(gasto)
         
 
+
         // Pasar el gasto al componente principal
+        guardarGasto(gasto)
+        guardarCrearGasto(true)
+
 
         // resetear el form
+        guardarG('')
+        guardarCantG('')
 
     }
     
@@ -68,7 +86,8 @@ const Formulario = () => {
                         id="cantidad"
                         type="number"
                         className="form-control"
-                        placeholder="Ej: 2 bs"
+                        placeholder="Ej: 2"
+                        value = {isNaN(cantidadg) ? '' : cantidadg}
                         onChange={e => guardarCantG(parseInt(e.target.value))}
                     />
                 </div>
@@ -80,6 +99,11 @@ const Formulario = () => {
             >Guardar</button>
         </form>
     );
+}
+
+Formulario.propTypes = {
+    guardarGasto: PropTypes.func.isRequired,
+    guardarCrearGasto: PropTypes.func.isRequired
 }
 
 export default Formulario;
